@@ -22,11 +22,6 @@ public class AdvancedMultiStreamProceduralMesh : MonoBehaviour
             vertexAttributeCount, Allocator.Temp, NativeArrayOptions.UninitializedMemory
             );
 
-        var mesh = new Mesh
-        {
-            name = "AMS Procedural Mesh",
-        };
-
         vertexAttributes[0] = new VertexAttributeDescriptor(
             dimension:3, stream: 0);
         vertexAttributes[1] = new VertexAttributeDescriptor(
@@ -66,8 +61,17 @@ public class AdvancedMultiStreamProceduralMesh : MonoBehaviour
         trianglesIndices[4] = 2;
         trianglesIndices[5] = 3;
 
+        var bounds = new Bounds(new Vector3(0.5f, 0.5f), new Vector3(1f, 1f));
+
         meshData.subMeshCount = 1;
         meshData.SetSubMesh(0, new SubMeshDescriptor(0, trianglesIndexCount));
+
+
+        var mesh = new Mesh
+        {
+            name = "AMS Procedural Mesh",
+            bounds = bounds
+        };
 
         Mesh.ApplyAndDisposeWritableMeshData(meshDataArray, mesh);
         GetComponent<MeshFilter>().mesh = mesh;
