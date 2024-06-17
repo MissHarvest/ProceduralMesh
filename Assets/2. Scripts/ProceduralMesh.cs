@@ -12,7 +12,9 @@ public class ProceduralMesh : MonoBehaviour
     {
         MeshJob<SqureGrid, SingleStream>.ScheduleParallel,
         MeshJob<SharedSqureGrid, SingleStream>.ScheduleParallel,
-        MeshJob<SharedTriangleGrid, SingleStream>.ScheduleParallel
+        MeshJob<SharedTriangleGrid, SingleStream>.ScheduleParallel,
+        MeshJob<MySharedTriangleGrid, SingleStream>.ScheduleParallel,
+        MeshJob<PointyHexaGrid, SingleStream>.ScheduleParallel,        
     };
 
     public enum MeshType
@@ -20,6 +22,8 @@ public class ProceduralMesh : MonoBehaviour
         SquareGrid, 
         SharedSquareGrid,
         SharedTriangleGrid,
+        MySharedTriangleGrid,
+        PointyHexaGrid,
     }
     [SerializeField]
     MeshType meshType;
