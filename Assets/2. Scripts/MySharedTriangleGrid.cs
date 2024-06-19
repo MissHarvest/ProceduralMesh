@@ -33,15 +33,15 @@ public struct MySharedTriangleGrid : IMeshGenerator
         
         vertex.position.x = (xStart + xOffset) / Resolution;
         vertex.position.y = (h * i + yOffset) / Resolution;
-        vertex.uv.x = xStart / Resolution;
-        vertex.uv.y = (h * i) / Resolution;
+        vertex.uv.x = (vertex.position.x) / (Resolution + 0.5f) * Resolution + 0.5f;
+        vertex.uv.y = (vertex.position.y) / (Resolution + 0.5f) * Resolution + 0.5f;
         stream.SetVertex(vi, vertex);
         ++vi;
 
         for (int x = 1; x <= Resolution; ++x, ++vi, ti += 2)
         {
             vertex.position.x = (x + xStart + xOffset) / Resolution;
-            vertex.uv.x = (x + xStart) / Resolution;
+            vertex.uv.x = (vertex.position.x) / (Resolution + 0.5f) * Resolution + 0.5f;
             stream.SetVertex(vi, vertex);
 
             if(i > 0)
