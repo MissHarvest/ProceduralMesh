@@ -15,7 +15,8 @@ public class ProceduralMesh : MonoBehaviour
         MeshJob<SharedSqureGrid, SingleStream>.ScheduleParallel,
         MeshJob<SharedTriangleGrid, SingleStream>.ScheduleParallel,
         MeshJob<MySharedTriangleGrid, SingleStream>.ScheduleParallel,
-        MeshJob<PointyHexaGrid, SingleStream>.ScheduleParallel,        
+        MeshJob<PointyHexaGrid, SingleStream>.ScheduleParallel,
+        MeshJob<UVSphere, SingleStream>.ScheduleParallel,
     };
 
     public float gizmoRadius = 0.01f;
@@ -27,6 +28,7 @@ public class ProceduralMesh : MonoBehaviour
         SharedTriangleGrid,
         MySharedTriangleGrid,
         PointyHexaGrid,
+        UVSphere
     }
 
     [System.Flags]

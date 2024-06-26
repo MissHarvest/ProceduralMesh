@@ -252,8 +252,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gizmoRadius: 0.01
   gizmoLength: 0.04
-  gizmos: 0
-  meshType: 4
+  gizmos: -1
+  meshType: 5
   resolution: 1
 --- !u!23 &653063311
 MeshRenderer:
